@@ -7,8 +7,24 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-   <bean id = "myCoach" 
-   		 class = "com.sixonik.springdemo.TrackCoach">
+	<!-- define the dependancy -->
+	
+   <bean id = "myFortune" class = "com.sixonik.springdemo.HappyFortuneService">
+   </bean>
+   
+  <!-- <bean id = "myCoach" 
+   		 class = "com.sixonik.springdemo.BaseballCoach">
+   		 <constructor-arg ref="myfortune"></constructor-arg>
+   </bean> -->
+   
+   <bean id = "myCoach" class = "com.sixonik.springdemo.TrackCoach">
+   		 <!-- Set up constructor injection -->
+   		 <constructor-arg ref="myFortune"></constructor-arg>
+   </bean>
+   
+   <bean id="myCricketCoach" class="com.sixonik.springdemo.CricketCoach">
+   		<!-- Setup setter injection -->
+   		<property name="fortuneService" ref="myFortune"></property>
    </bean>
 
 </beans>
