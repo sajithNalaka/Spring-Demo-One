@@ -24,7 +24,11 @@
    
    <bean id="myCricketCoach" class="com.sixonik.springdemo.CricketCoach">
    		<!-- Setup setter injection -->
-   		<property name="fortuneService" ref="myFortune"></property>
+   		<property name="fortuneService" ref="myFortune"/>
+   		
+   		<!-- Setter injection - Literal values -->
+   		<property name="emailAddress" value="mybestcoach@sixonik.com"/>
+   		<property name="team" value="super hero @ gampaha"/>
    </bean>
 
 </beans>
