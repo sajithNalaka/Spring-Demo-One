@@ -17,7 +17,7 @@
    		 <constructor-arg ref="myfortune"></constructor-arg>
    </bean> -->
    
-   <bean id = "myCoach" class = "com.sixonik.springdemo.TrackCoach">
+   <bean id = "myCoach" class = "com.sixonik.springdemo.TrackCoach" scope="prototype">
    		 <!-- Set up constructor injection -->
    		 <constructor-arg ref="myFortune"></constructor-arg>
    </bean>
