@@ -7,9 +7,6 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Load the property file -->
-	<context:property-placeholder location="classpath:application.properties"/>
-	
 	<!-- define the dependancy -->
 	
    <bean id = "myFortune" class = "com.sixonik.springdemo.HappyFortuneService">
@@ -25,12 +22,4 @@
    		 <constructor-arg ref="myFortune"></constructor-arg>
    </bean>
    
-   <bean id="myCricketCoach" class="com.sixonik.springdemo.CricketCoach">
-   		<!-- Setup setter injection -->
-   		<property name="fortuneService" ref="myFortune"/>
-   		
-   		<!-- Setter injection - Literal values -->
-   		<property name="emailAddress" value="${sixonic.email}"/>
-   		<property name="team" value="${sixonic.team}"/>
-   </bean>
 </beans>
